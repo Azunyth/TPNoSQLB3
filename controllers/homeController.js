@@ -23,8 +23,14 @@ router.get('/hello', function(req, res) {
     p.save().then(function(personSaved){
         res.render('hello.ejs', personSaved);
     });
+});
 
+router.get('/add', function(req, res) {
+    res.render('add.ejs');
+});
 
-})
+router.post('/add', function(req, res) {
+    res.redirect('/add');
+});
 
 module.exports = router;

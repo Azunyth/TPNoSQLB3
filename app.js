@@ -8,6 +8,10 @@ mongoose.Promise = global.Promise;
 // Permet de definir un template engine
 app.set('view engine', 'ejs');
 
+// Middleware qui permet de rendre les fichiers
+// statiques sans créer de routes particulières
+app.use('/public', express.static(__dirname+'/public'));
+
 // Middleware qui permet d'appliquer du ctrl en question sur le pattern /
 app.use('/', require('./controllers/homeController'));
 

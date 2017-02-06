@@ -3,13 +3,23 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <link rel="stylesheet" href="/public/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/public/css/main.css" />
+        <script src="/public/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <h1>Hello World</h1>
-        <ul>
-        <% persons.forEach(function(p) { %>
-            <li><%= p.firstname + ' ' + p.lastname %></li>
-        <% }); %>
-        </ul>
+        <%- include('shared/menu') %>
+        <div class="container">
+            <a class="btn btn-primary pull-right" href="/add">
+                <span class="glyphicon glyphicon-plus"></span> Ajouter une personne
+            </a>
+            <h1>Liste des peronnes</h1>
+
+            <ul>
+            <% persons.forEach(function(p) { %>
+                <li><%= p.firstname + ' ' + p.lastname %></li>
+            <% }); %>
+            </ul>
+        </div>
     </body>
 </html>
