@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 
 // Permet de changer le système de promesses de mongo par celui de Node
 mongoose.Promise = global.Promise;
+global.nbPersonInsert = 0;
 
 // Permet de definir un template engine
 app.set('view engine', 'ejs');
